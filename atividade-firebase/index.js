@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded( {extended: true}));
 
 app.get('/', (req, res) => {
-    res.json({ info: 'Atividade de autenticação com firebase' });
+    res.json({ info: 'Atividade de autenticação com firebase. Rotas - /cadastro, /login' });
   });
 
 app.post('/cadastro', async (req, res) => {
