@@ -8,11 +8,15 @@ admin.initializeApp({
     credential: admin.credential.cert(credentials)
 });
 
-const SECRET = './firebase-credentials'; 
+const SECRET = '"./fb-auth-aos-firebase-adminsdk-v5lia-e24bd63186.json"'; 
 
 app.use(express.json());
 
 app.use(express.urlencoded( {extended: true}));
+
+app.get('/', (req, res) => {
+    res.json({ info: 'Atividade de autenticação com firebase' });
+  });
 
 app.post('/cadastro', async (req, res) => {
     try {
@@ -66,8 +70,6 @@ app.post('/login', async (req, res) => {
       });
     }
   });
-  
-
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
